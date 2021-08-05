@@ -1,0 +1,45 @@
+body .box {
+  width: 370px;
+  height: 140px;
+  border: 50px solid #ffb3a7;
+}
+body .circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50px;
+  background-color: pink;
+}
+body .col-1 {
+  height: 50px;
+}
+body .col-2 {
+  height: 100px;
+}
+body .col-3 {
+  height: 150px;
+}
+body .col-4 {
+  height: 200px;
+}
+body .row-1 {
+  width: 10px;
+}
+body .row-2 {
+  width: 20px;
+}
+body .row-3 {
+  width: 30px;
+}
+body .row-4 {
+  width: 40px;
+}
+body .row-5 {
+  width: 50px;
+}
+body .row-6 {
+  width: 60px;
+}
+body .row-7 {
+  width: 70px;
+}
+/*# sourceMappingURL=./210726.css.map */

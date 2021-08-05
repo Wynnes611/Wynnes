@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.title {
+  text-align: center;
+  margin-top: 50px;
+}
+.container {
+  margin: 50px auto;
+  width: 1300px;
+  height: 500px;
+  border: 5px solid #8ed1ec;
+  border-radius: 15px;
+}
+.container .searchBox {
+  width: 450px;
+  margin: 20px auto 0;
+}
+.container .cityChangeBox {
+  font-size: 13px;
+  width: 440px;
+  margin: 10px auto 0;
+}
+.container .cityChangeBox .cityContent {
+  float: left;
+  padding-left: 10px;
+}
+.container .cityChangeBox > span:first-child {
+  float: left;
+  user-select: none;
+}
+.container .cityChangeBox > span:last-child {
+  float: right;
+}
+.container .cityChangeBox .cityContent li {
+  font-size: 13px !important;
+  text-align: center;
+  width: 43px;
+  font-size: 16px;
+  float: left;
+  color: #9b9b9b;
+  cursor: pointer;
+  user-select: none;
+}
+.container .searchBox input {
+  outline: none;
+  border: 2px solid #8ed1ec;
+  padding-left: 20px;
+  height: 32px;
+  width: 365px;
+  box-sizing: border-box;
+  vertical-align: bottom;
+  float: left;
+}
+.container .searchBox button {
+  height: 32px;
+  width: 85px;
+  background-color: #8ed1ec;
+  color: #fff;
+  border: none;
+  float: left;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+.changeBtn {
+  cursor: pointer;
+  user-select: none;
+}
+/* 天气内容详情 */
+.cityLisContainer {
+  width: 1290px;
+  height: 260px;
+  margin: 50px auto 0;
+}
+
+.cityLisContainer .cityList li{
+  height: 250px;
+  width:calc(1290px/7  - 5px);
+  float: left;
+  margin-right: 5px;
+  text-align: center;
+}
+.cityLisContainer .cityList li img{
+  margin-top: 30px;
+}
+.cityLisContainer .cityList li p{
+  margin: 4px 0;
+}
+.cityLisContainer .cityList li p:nth-child(-n+3){
+  color: orange;
+  font-weight: bold;
+}
+.cityLisContainer .cityList li>p:nth-child(4){
+  color: #9b9b9b;
+}
+.cityLisContainer .cityList li:last-child{
+  margin-right: 0px;
+}

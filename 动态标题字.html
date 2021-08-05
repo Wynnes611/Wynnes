@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-size: 15px;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        font-size: 6rem;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: #36676f;
+      }
+      button {
+        width: 100px;
+        height: 40px;
+        color:#fff ;
+        border: none;
+        background-color: #6b9c94c5;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 40px;
+        border-radius: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 span {
+        display: inline-block;
+      }
+      h1.animate {
+        background-image: linear-gradient(
+          40deg,
+          #e6dfc7,
+          #ac7262,
+          #4a6d81,
+          #999f90,
+          #7e9793,
+          #858567,
+          #36676f
+        );
+        transition: text-shadow 0.4s 0.4s;
+        text-shadow: 7px 7px 5px rgba(204, 204, 204, 0.521);
+      }
+      h1.animate span {
+        animation: jump 0.4s ease-in-out var(--delay);
+      }
+      @keyframes jump {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wynnes</h1>
+    <button>ClickMe</button>
+    <script>
+      const h1 = document.querySelector("h1");
+      h1.innerHTML = h1.textContent.replace(/\S/g, "<span>$&</span>");
+      var btn = document.querySelector("button");
+
+      document.querySelectorAll("span").forEach((span, index) => {
+        span.style.setProperty("--delay", `${index * 0.1}s`);
+      });
+
+      btn.onclick = function () {
+        h1.classList.remove("animate");
+        void h1.offsetHeight;
+        h1.classList.add("animate");
+      };
+    </script>
+  </body>
+</html>

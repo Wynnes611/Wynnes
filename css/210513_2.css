@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    background-color: #cc6699;
+    height: 50px;
+    line-height: 20px;
+}
+header nav{
+    width: 1200px;
+    margin: 0 auto;
+}
+header nav>ul{
+    float: right;
+}
+header nav>ul>li{
+    float: left;
+    font-size: 14px;
+}
+header nav>ul>li>a{
+    padding: 15px;
+    display: block;
+}
+header nav ul li:nth-last-child(2){
+    margin-right: 6px;
+}
+header nav ul li:last-child{
+    margin-right: 0px;
+}
+header nav p{
+    float: left;
+    line-height: 50px;
+    font-size: 18px;
+}
+header nav p a{
+    color: #efefef;
+    display: block;
+}
+header nav ul li a{
+    color: #efefef;
+}
+
+/* triangle */
+.triangle{
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid #efefef;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    vertical-align: top;
+    line-height: 50px;
+}
+.language:hover .triangle{
+    border-top: 0;
+    line-height: 0px;
+    border-bottom: 7px solid #fff;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    -webkit-transition: border-bottom .5s ease 0s;
+    transition: border-bottom .5s ease 0s;
+}
+/* triangle end */
+
+/* 清除浮动 start */
+.clearfix::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+/* 清除浮动 end */
+
+/* 二级 start */
+.secondT{
+    font-size: 18px;
+    color:#efefef;
+    position: absolute;
+    background-color: #aaa;
+    display: none;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+.secondT li:nth-child(2){
+    margin-top: 30px;
+}
+.language:hover .secondT{
+    display: block;
+    margin-top: 15px;
+    margin-left: -10px;
+    color: #cc6699 ;
+}
+.secondT a{
+    display: block;
+}
+
+/* 二级 end */

@@ -1,0 +1,10 @@
+.one li{
+    display: inline;
+}
+.two li{
+    display: inline-block;
+}
+.three li{
+    float: left;
+    background-color: rebeccapurple;
+}

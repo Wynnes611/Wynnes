@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #27323a;
+        padding: 50px;
+      }
+      button {
+        margin: 20px;
+        width: 100px;
+        height: 45px;
+        border-radius: 8px;
+        background-color: transparent;
+        transition-property: color, background-color, border-color, rotateX;
+        transition-duration: 0.5s;
+      }
+      /* 按钮通用效果 */
+      .btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn::before {
+        width: 100px;
+        height: 45px;
+        display: block;
+        content: "";
+        top: -3px;
+        left: -3px;
+        position: absolute;
+        transition-property: transform;
+        transition-timing-function:ease;
+        transition-duration: .5s;
+        z-index: -3;
+    }
+    .btn::after {
+        width: 100px;
+        height: 45px;
+        display: block;
+        content: "";
+        top: -3px;
+        left: -3px;
+        position: absolute;
+        transition-property: transform;
+        transition-timing-function:ease;
+        transition-duration: .5s;
+        z-index: -3;
+      }
+      .btn:hover {
+        color: #27323a;
+      }
+
+      /* 第一个按钮 */
+      .btn1 {
+        border: solid #a2f6bd;
+        color: #a2f6bd;
+        transition-timing-function: cubic-bezier(0.5,2,1,1);
+      }
+      .btn1::after {
+        background-color: #a2f6bd;
+        width: 120px;
+        transform: translateX(-120px);
+      }
+      .btn1:hover::after {
+        transform: translateX(-20px);
+      }
+
+      /* 第二个按钮 */
+      .btn2 {
+        border: solid #ccd17f;
+        color: #ccd17f;
+      }
+      .btn2::after {
+        background-color: #ccd17f;
+        transform: translateY(-45px);
+      }
+      .btn2:hover::after {
+        transform: translateY(0px);
+      }
+
+      /* 第三个按钮 */
+      .btn3 {
+        border: solid #fed35f;
+        color: #fed35f;
+      }
+
+      .btn3::after {
+        background-color: #fed35f;
+        transform: translateX(100px);
+      }
+      .btn3:hover::after {
+        transform: translateX(0px);
+      }
+      /* 第四个按钮 */
+      .btn4 {
+        border: solid #ffd478;
+        color: #ffd478;
+      }
+      .btn4::after {
+        background-color: #ffd478;
+        transform: rotate(46deg) translate(-99px, 103px);
+        height: 150px;
+        width: 150px;
+      }
+      .btn4:hover::after {
+        transform: rotate(46deg) translateX(-56px);
+      }
+
+      /* 第五个按钮 */
+      .btn5 {
+        border: solid #96eab7;
+        color: #96eab7;
+      }
+      .btn5::after {
+        background-color: #96eab7;
+        transform: translateY(45px);
+      }
+      .btn5:hover::after {
+        transform: translateY(0px);
+      }
+
+      /* 第六个按钮 */
+      .btn6 {
+        border: solid #3cafca;
+        color: #3cafca;
+      }
+      .btn6::after {
+        background-color: #3cafca;
+        transform: rotate(46deg) translate(-73px, -146px);
+        height: 150px;
+        width: 150px;
+      }
+      .btn6:hover::after {
+        transform: rotate(46deg) translateX(-56px);
+      }
+
+      /* 第七个按钮 */
+      .btn7 {
+        border: solid #8e95ca;
+        color: #8e95ca;
+        z-index: 999;
+      }
+      .btn7::before {
+        background-color: #8e95ca;
+        transform: translateX(-100px);
+      }
+      .btn7::after {
+        background-color: #8e95ca;
+        transform: translateX(99px);
+      }
+      .btn7:hover::before {
+        transform: translateX(-50px);
+      }
+      .btn7:hover::after {
+        transform: translateX(50px);
+      }
+
+      /* 第八个按钮 */
+      .btn8 {
+        border: solid #ace7ef;
+        color: #ace7ef;
+      }
+      .btn8::before {
+        background-color: #ace7ef;
+        height: 150px;
+        transform: rotate(45deg) translateX(-138px) translateY(10px);
+      }
+      .btn8::after {
+        height: 150px;
+        background-color: #ace7ef;
+        transform: rotate(45deg) translateX(61px) translateY(-38px);
+      }
+      .btn8:hover::before {
+        transform: rotate(45deg) translateX(-82px) translateY(-14px);
+      }
+      .btn8:hover::after {
+        transform: rotate(45deg) translateX(12px) translateY(-38px);
+      }
+
+      /* 第九个按钮 */
+      .btn9 {
+        border: solid #cefff1;
+        color: #cefff1;
+      }
+      .btn9::after {
+        background-color: #cefff1;
+        transform: rotateX(-90deg);
+    }
+    .btn9:hover::after {
+        transform: rotateX(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn1 btn">BUTTON 1</button
+    ><button class="btn2 btn">BUTTON 2</button
+    ><button class="btn3 btn">BUTTON 3</button><br />
+    <button class="btn4 btn">BUTTON 4</button
+    ><button class="btn5 btn">BUTTON 5</button
+    ><button class="btn6 btn">BUTTON 6</button><br />
+    <button class="btn7 btn">BUTTON 7</button
+    ><button class="btn8 btn">BUTTON 8</button
+    ><button class="btn9 btn">BUTTON 9</button><br />
+  </body>
+</html>

@@ -1,0 +1,10 @@
+body {
+  background-color: rebeccapurple;
+}
+body span {
+  color: red;
+}
+body span:hover {
+  color: pink;
+}
+/*# sourceMappingURL=./less练习.css.map */

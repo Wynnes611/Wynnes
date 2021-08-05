@@ -1,0 +1,53 @@
+@color: #f86060;
+@width: 500px;
+@height: 140px;
+@redborder:5px solid @color;
+@pixel: 1px;
+body {
+  #fun {
+    //   映射
+    @navC: #ffb3a7;
+    @table: #ed5736;
+    @main: #db5a6b;
+  }
+  //   background-color: violet;
+  #StyleList {
+    //命名空间和访问符
+
+    .borderS() {
+      // .borderStyle() {
+      border: @pixel solid #fun[ @navC];
+      // }
+    }
+    @pixel: 50px;
+    .bRadius() {
+        
+      border-radius: @pixel;
+    }
+  }
+  .box {
+    width: (@width)-130px;
+    height: @height;
+    #StyleList.borderS();
+  }
+  .circle {
+    width: 400px;
+    height: 400px;
+    #StyleList.bRadius();
+    background-color: pink;
+  }
+
+
+  each(range(4), {
+    .col-@{value} {
+      height: (@value * 50px);
+    }
+  });
+
+
+  each(range(7),{
+    .row-@{value}{
+      width: (@value *10px);
+    }
+  });
+}

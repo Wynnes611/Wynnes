@@ -1,0 +1,43 @@
+* {
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: #fff;
+}
+
+.wrap-content>li {
+    float: left;
+    display: none;
+}
+.wrap-content>li:hover {
+    float: left;
+    display: block;
+}
+
+nav {
+    background-color: #000;
+    display: flex;
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-bottom: auto; */
+    /* display: flex; */
+}
+
+.nav-nums {
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+main {
+    flex: 1 0 auto;
+}

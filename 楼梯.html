@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #canvas {
+        border: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300">
+      您的浏览器还不支持canvas
+    </canvas>
+
+    <script>
+      var canvas = document.querySelector("#canvas");
+      var context = canvas.getContext("2d");
+      context.beginPath();
+      context.moveTo(0, 10);
+      var x = 40;
+      var y = 50;
+      for (var i = 0; i < 16; i++) {
+        if (i == 0) {
+          context.lineTo(40, 10);
+        } else if (i % 2 == 0) {
+          context.lineTo(x, y);
+          y += 40;
+          context.lineTo(x, y);
+        } else if (i % 2 == 1) {
+          context.lineTo(x, y);
+          x += 40;
+          context.lineTo(x, y);
+        }
+      }
+      context.lineTo(320, 300);
+      context.lineTo(0, 300);
+      context.closePath();
+      context.fillStyle = "#bbb";
+      context.fill();
+
+      context.stroke();
+    </script>
+  </body>
+</html>

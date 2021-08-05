@@ -1,0 +1,67 @@
+*{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+}
+header{
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+}
+header a{
+      text-decoration: none;
+      color: #B0B0B0;
+      font-size: 12px;
+      display: inline-block;
+}
+header nav{
+      width: 1200px;
+      margin: 0 auto;
+}
+header nav .left ul li, header nav .right ul li{
+    float: left;
+}
+header nav .left ul li a, header nav .right ul li a{
+    padding: 0 8px;
+    display: block;
+}
+header nav .left ul li a:hover, header nav .right ul li a:hover{
+    color: #fff;
+}
+header nav .left {
+    float:left;
+}
+header nav .right{
+    float: right;
+}
+header nav .right ul .shopping-cart{
+    margin-left: 7px;
+}
+.shopping-cart i{
+    font-size: 16px;
+    padding-right: 5px;
+}
+.shopping-cart a{
+    width:108px;
+}
+
+/* home_hero_sub */
+.home_hero_sub{
+    width: 1200px;
+    height: 170px;
+    margin: 14px auto 0;
+}
+.home_hero_sub .sub_content_left{
+    height: inherit;
+    width: 234px;
+    background-color: #5f5750;
+}
+.home_hero_sub .sub_content{
+    margin-left: 15px;
+    width: calc((1200px - 234px - 15px*3)/3) ;
+    height: inherit;
+}
+.home_hero_sub > div{
+    float: left;
+}
+

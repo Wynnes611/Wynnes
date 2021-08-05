@@ -1,0 +1,61 @@
+html{
+    font-size: 15px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    align-items: flex-end;
+}
+.glass{
+    width: 100%;
+    height: 8rem;
+    background-color: #eee;
+    display:flex;
+    justify-content: center;
+}
+.dock{
+    --scale:1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dock li{
+    font-size: calc(6rem * var(--scale));
+    padding: 0 .5rem;
+    cursor: default;
+    position: relative;
+    top: calc((6rem * var(--scale) - 6rem)/2 * -1);
+    transition: all .2s  ease-in-out;
+    -webkit-transition: all .2s  ease-in-out;
+    -moz-transition: all .2s  ease-in-out;
+    -ms-transition: all .2s  ease-in-out;
+    -o-transition: all .2s  ease-in-out;
+}
+
+.dock li.loading{
+    animation:1s loading ease-in infinite;
+    -webkit-animation:1s loading ease-in infinite;
+}
+@keyframes loading{
+    0%,100%{
+        transform:translateY(0px)    ;
+        -webkit-transform:translateY(0px)    ;
+        -moz-transform:translateY(0px)    ;
+        -ms-transform:translateY(0px)    ;
+        -o-transform:translateY(0px)    ;
+}
+60%{
+    transform:translateY(-40px);
+    -webkit-transform:translateY(-40px);
+    -moz-transform:translateY(-40px);
+    -ms-transform:translateY(-40px);
+    -o-transform:translateY(-40px);
+}
+}

@@ -1,0 +1,5 @@
+article section {
+  margin: 5px; }
+
+article > section {
+  border: 1px solid #ccc; }

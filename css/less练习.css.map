@@ -1,0 +1,1 @@
+{"version":3,"sources":["less练习.less","<input css 6>"],"names":[],"mappings":"AAAA;EACE,gCAAA;CCCD;ADFD;EAGI,WAAA;CCEH;ADDG;EACE,YAAA;CCGL","file":"to.css","sourcesContent":[null,"body {\n  background-color: rebeccapurple;\n}\nbody span {\n  color: red;\n}\nbody span:hover {\n  color: pink;\n}\n/*# sourceMappingURL=./less练习.css.map */"]}

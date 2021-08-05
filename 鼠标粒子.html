@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #fff;
+      }
+      h1 {
+        text-align: center;
+        pointer-events: none;
+        user-select: none;
+        color: transparent;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 5px #ccc;
+        background-image: linear-gradient(
+          90deg,
+          var(--fColor),
+          var(--nColor),
+          var(--nnColor),
+          var(--nnnColor),
+          var(--nnnnColor)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 500%;
+        animation: sun 3s infinite alternate;
+      }
+
+      @keyframes sun {
+        100% {
+          background-position: 100% 0;
+        }
+      }
+      #canvas {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <h1>FirstLook</h1>
+
+    <script>
+      var live = 50;
+      var canvas = document.querySelector("#canvas");
+      var context = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      function animationColor() {
+        var hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+        var colorHex = [];
+        var HexStr = "#";
+        for (var i = 0; i < 6; i++) {
+          colorHex[i] = hex
+            .splice(parseInt(Math.random() * hex.length), 1)
+            .toString();
+          HexStr += colorHex[i];
+        }
+        return HexStr;
+      }
+      console.log(animationColor());
+
+      var h1 = document.querySelector("h1");
+      h1.style.setProperty("--fColor", animationColor());
+      h1.style.setProperty("--nColor", animationColor());
+      h1.style.setProperty("--nnColor", animationColor());
+      h1.style.setProperty("--nnnColor", animationColor());
+      h1.style.setProperty("--nnnnColor", animationColor());
+
+      var colors = [
+        "182,194,154",
+        "138,151,123",
+        "244,208,0",
+        "229,131,8",
+        "220,87,18",
+      ];
+      var colors2 = [
+        "249,205,173",
+        "254,67,101",
+        "252,157,154",
+        "200,200,169",
+        "131,175,155",
+      ];
+      var points = [];
+      window.addEventListener("mousemove", function (event) {
+        for (var i = 0; i < 2; i++) {
+          points.push({
+            sx: event.x,
+            sy: event.y,
+            size: Math.random() * 20,
+            vx: 0.5 - Math.random(),
+            vy: 0.5 - Math.random(),
+            life: live,
+            color: colors[parseInt(Math.random() * colors.length)],
+          });
+        }
+      });
+      window.addEventListener("click", function (event) {
+        for (var i = 0; i < 10; i++) {
+          points.push({
+            sx: event.x,
+            sy: event.y,
+            size: Math.random() * 40,
+            vx: 0.5 - Math.random(),
+            vy: 0.5 - Math.random(),
+            life: live,
+            color: colors2[parseInt(Math.random() * colors2.length)],
+          });
+        }
+      });
+      function drawPoints() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < points.length; i++) {
+          point = points[i];
+          context.beginPath();
+          context.arc(point.sx, point.sy, point.size, Math.PI * 2, false);
+          context.fillStyle =
+            "rgba(" + point.color + "," + point.life / live + ")";
+          context.fill();
+          point.life--;
+          if (point.life <= 0) {
+            points.splice(i, 1);
+          }
+          point.sx += point.vx * 5;
+          point.sy += point.vy * 5;
+        }
+      }
+      setInterval(drawPoints, 20);
+
+      window.onresize = function () {
+        location.reload();
+      };
+    </script>
+  </body>
+</html>

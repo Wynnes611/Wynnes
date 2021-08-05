@@ -1,0 +1,15 @@
+@classList:a,b,c,d,e,f,g;
+.bgCard(@className,@Filename){
+    @{className}{
+        background-image:url('../images/@{Filename}.png') center/100% no-repeat;
+    }
+}
+body{
+    div{
+        .loop(@i:1) when (@i<=length(@classList)){
+            .bgCard(extract(@classList,@i),extract(@classList,@i));
+            .loop(@i+1);
+        }
+        .loop();
+    }
+}
